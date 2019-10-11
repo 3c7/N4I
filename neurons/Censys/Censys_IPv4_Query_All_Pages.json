@@ -1,0 +1,47 @@
+{
+  "name": "Censys_IPv4_Query_All_Pages",
+  "version": "1.0",
+  "author": "Nils Kuhnert",
+  "url": "https://github.com/3c7/N4I",
+  "description": "Use Cortex to perfom Censys queries for infrastructure analysis.",
+  "dataTypeList": [
+    "censys-ipv4-query"
+  ],
+  "baseConfig": "Censys",
+  "command": "Censys/censys_query.py",
+  "config": {
+    "auto_extract": false
+  },
+  "configurationItems": [
+    {
+      "name": "api_id",
+      "description": "API ID as shown in the API panel",
+      "type": "string",
+      "multi": false,
+      "required": true
+    },
+    {
+      "name": "api_secret",
+      "description": "API secret as shown in the API panel",
+      "type": "string",
+      "multi": false,
+      "required": true
+    },
+    {
+      "name": "fields",
+      "description": "Fields to be queried.",
+      "type": "string",
+      "multi": true,
+      "required": true,
+      "defaultValue": [
+        "ip",
+        "autonomous_system",
+        "location",
+        "protocols",
+        "updated_at",
+        "80.http",
+        "443.https"
+      ]
+    }
+  ]
+}
